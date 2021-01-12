@@ -1,0 +1,34 @@
+<H4 style="text-align: center;">PENDING CLAIMS</H4>
+<br>
+<table class="table table-hover" style="text-align: center;">
+    <thead>
+    <tr >     
+      <th scope="col">ClaimId</th>
+      <th scope="col">ClaimDate</th>
+      <th scope="col">ReasonToClaim</th>
+      <th scope="col">ClaimAmount</th>
+      <th scope="col">ApprovalStatus</th>
+       <th></th> 
+    </tr>
+</thead>
+<tbody>
+      <tr *ngFor="let trans of translist" >
+   
+      <th scope="row">{{ trans.ClaimId }}</th>
+      <td>{{ trans.ClaimDate | date:'longDate'}}</td>
+      <td>{{ trans.ReasonToClaim}}</td>
+      <td >{{ trans.ClaimAmount}}</td>
+      <td >{{ trans.ApprovalStatus}}</td>
+      <td><a [routerLink]="['/admin-edit/', trans.ClaimId]" class="btn btn-primary btn-sm float-right" >EDIT</a></td> 
+      </tr>
+</tbody>
+</table>
+      <br>
+<a [routerLink]="['/transactions']" class="btn btn-primary btn-sm">View all Transactions</a>
+    
+    
+
+
+
+
+

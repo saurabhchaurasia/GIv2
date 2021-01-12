@@ -1,0 +1,53 @@
+<div class="container">
+    <div>
+      <h2>Insurances</h2>      
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Insurance No</th>
+              <th scope="col">Plans</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Policy Start Date</th>
+              <th scope="col">Policy End Date</th>
+              <th scope="col">Amount</th>
+              <th scope="col">MotorId</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let insurance of insurancelist">
+              <td scope="row">{{ insurance.InsuranceId }}</td>
+              <td>{{insurance.Plans }}</td>
+              <td>{{insurance.Duration}}</td>
+              <td>{{insurance.PolicyStartDate | date:'longDate'}}</td>
+              <td>{{insurance.PolicyEndDate | date:'longDate'}}</td>
+              <td>{{insurance.Amount}}</td>
+              <td>{{insurance.MotorId}}</td>
+            </tr>
+          </tbody>
+        </table>      
+    </div>
+    <br>
+    <div>
+        <h2>Claims</h2>      
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Claim No</th>
+              <th scope="col">Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let claim of claimlist">
+              <td scope="row">{{ claim.claimId }}</td>
+              <td>{{claim.claimDate | date:'longDate'}}</td>
+              <td>{{claim.claimStatus}}</td>
+              <td>{{claim.claimAmount}}</td>
+              <td>{{claim.claimReason}}</td>
+            </tr>
+          </tbody>
+          </table>        
+    </div>
+</div>

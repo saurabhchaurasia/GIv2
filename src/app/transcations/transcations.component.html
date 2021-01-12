@@ -1,0 +1,21 @@
+<H4 style="text-align: center;">TRANSACTION DETAILS</H4>
+<br>
+<table class="table table-hover" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">TransactionId</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+        <th scope="col">UserId</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trans of translist">
+        <th scope="row">{{ trans.TransactionId}}</th>
+        <td>{{ trans.Amount}}</td>
+        <td >{{ trans.Date | date:'longDate'}}</td>
+        <td>{{ trans.UserId}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a [routerLink]="['/admin']" class="btn btn-primary btn-sm">Back to admin</a>

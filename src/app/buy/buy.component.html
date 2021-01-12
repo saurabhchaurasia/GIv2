@@ -1,0 +1,79 @@
+<main role="main" class="container jumbotron">
+    <div class="container">
+        <h1 class="text-center" >Buy Insurance</h1>
+        <form #buyForm='ngForm' (ngSubmit)='saveMotor(MOTOR)'>
+            <div class="form-check">
+                <input class="form-check-input" [(ngModel)]='MOTOR.Type' type="radio" name="exampleRadios" id="exampleRadios1" value="4Wheller" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  4Wheeler
+                </label>
+                <br/>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]='MOTOR.Type' type="radio" name="exampleRadios" id="exampleRadios2" value="2Wheeler">
+                <label class="form-check-label" for="exampleRadios2">
+                  2Wheeler
+                </label>
+              </div>
+             <h6> Your Choice of Vehicle:{{MOTOR.Type}}</h6>
+              <div class="form-group" [class.has-error]="yearcontrol.touched && yearcontrol.invalid">
+                <label for="year">Enter ManufactureYear</label>
+                <input type="text" name="year" id="year" class="form-control" required [(ngModel)]='MOTOR.ManufactureYear' #yearcontrol='ngModel'>
+                <div *ngIf="yearcontrol.touched && yearcontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="yearcontrol.errors.required">
+                        year is required
+                    </span>
+                </div>
+              </div>
+              <div class="form-group" [class.has-error]="modelcontrol.touched && modelcontrol.invalid">
+                <label for="model">Enter Model</label>
+                <input type="text" name="model" id="model" class="form-control" required [(ngModel)]='MOTOR.Model' #modelcontrol='ngModel'>
+                <div *ngIf="modelcontrol.touched && modelcontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="modelcontrol.errors.required">
+                        model is required
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="datecontrol.touched && datecontrol.invalid">
+                <label for="date">Enter purchasedate</label>
+                <input type="date" name="date" id="date" class="form-control" required [(ngModel)]='MOTOR.PurchaseDate' #datecontrol='ngModel'> 
+                <div *ngIf="datecontrol.touched && datecontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="datecontrol.errors.required">
+                        date is required
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="Regcontrol.touched && Regcontrol.invalid">
+                <label for="Regno">Enter Registration Number</label>
+                <input type="text" name="Regno" id="Regno" class="form-control" required [(ngModel)]='MOTOR.Regno' #Regcontrol='ngModel'>
+                <div *ngIf="Regcontrol.touched && Regcontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="Regcontrol.errors.required">
+                        RegistrationNo is required
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="Engcontrol.touched && Engcontrol.invalid">
+                <label for="Engno">Enter Engine Number</label>
+                <input type="text" name="Engno" id="Engno" class="form-control" required [(ngModel)]='MOTOR.EngineNo'
+                #Engcontrol='ngModel'>
+                <div *ngIf="Engcontrol.touched && Engcontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="Engcontrol.errors.required">
+                        EngineNo is required
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="Chasiscontrol.touched && Chasiscontrol.invalid">
+                <label for="Chasisno">Enter Chasis Number</label>
+                <input type="text" name="Chasisno" id="Chasisno" class="form-control" required [(ngModel)]='MOTOR.ChasisNo' #Chasiscontrol='ngModel'>
+                <div *ngIf="Chasiscontrol.touched && Chasiscontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="Chasiscontrol.errors.required">
+                        ChasisNo is required
+                    </span>
+                </div>
+            </div>
+            <div>
+                <button type='submit' [disabled]='buyForm.invalid' class="btn btn-success">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</main>

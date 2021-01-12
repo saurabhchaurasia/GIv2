@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+img{
+    width:100%;
+}
+pre{
+    font-size: medium;
+}
+.col-md-8{
+    background-color: #eeeeee;
+}
+.atext{
+    padding: 30px;
+}

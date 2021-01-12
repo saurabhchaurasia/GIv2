@@ -1,0 +1,52 @@
+<div class='container'   >
+      <h3 class="form-heading" class="text-center">Claim Insurance</h3>
+           <form #claimForm='ngForm' (ngSubmit)='saveClaim(claim)'>
+               <div class='form-group' [class.has-error]='numcontrol.touched && numcontrol.invalid'>
+                <div class="form-group">
+                       <label for='num' class="font-weight-normal"> Insurance Number</label>
+                      <select id="num" name="num"  required ngModel class="form-control" [(ngModel)]='claim.InsuranceId'
+                        #numcontrol='ngModel'>
+                        <option [ngValue]="null">Select Insurance</option>
+                        <option *ngFor="let i of insurancelist" value={{i.InsuranceId}} >{{i.InsuranceId}}-{{i.Plans}}-{{i.MotorId}}</option>
+                      </select>
+                       <span class='help-block alert-danger' *ngIf='numcontrol.touched && numcontrol.invalid'>
+                           Insurance Number cannot be blank
+                       </span> 
+                </div>
+              </div>  <br/>
+                <div class='form-group' [class.has-error]='reasoncontrol.touched && reasoncontrol.invalid'>
+                    <div class="form-group">
+                          <label for='reason' class="font-weight-normal"> Claim Reason</label>
+                          <select id="reason" name="reason"  placeholder = "Select Reason" required ngModel class="form-control" [(ngModel)]='claim.ReasonToClaim'
+                            #reasoncontrol='ngModel'>
+                            <option [ngValue]="null">Select Reason</option>
+                            <option value="Natural Disaster">Natural Disaster</option>
+                            <option value="Man made Disaster">ManMade Disaster</option>
+                            <option value="Accident">Accident</option>
+                            <option value="Theft">Theft</option>
+                             
+                          </select>
+                           <span class='help-block alert-danger' *ngIf='reasoncontrol.touched && reasoncontrol.invalid'>
+                               Reason is required
+                           </span> 
+                       </div>
+                   </div> <br/>
+                   <div class='form-group'>
+                    <label for='Amnt' class="font-weight-normal">Claim Amount</label>
+                    <input type='text' id='Amnt' name='Amnt' placeholder = "Enter Amount" class = "form-control" [(ngModel)]='claim. ClaimAmount'/>
+                </div>
+               <div class='text-center'>
+                  <button type='submit' class="btn btn-primary" [disabled]=claimForm.invalid>Submit</button>
+              </div>
+          </form>
+
+
+<router-outlet></router-outlet>
+</div>
+<br/>
+<br/>
+<div class="text-center">
+  <a [routerLink]="['/history']"  class="btn btn-primary btn-sm-float-right"  > View ClaimHistory</a>
+</div>
+
+

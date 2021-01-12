@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="registerForm">
+        <h2>Register</h2>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input [(ngModel)]="registermodelobject.Name" type="text" class="form-control" id="name" placeholder="Enter your name here" required>
+            <div *ngIf="v_name" class="item-invalid">
+              Enter valid name.
+            </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input (blur)="CheckEmail()" [(ngModel)]="registermodelobject.Email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <div *ngIf="v_email" class="item-invalid">
+              Enter Valid Email Id.
+            </div>
+            <div *ngIf="disabled" class="item-invalid">
+              Email Id Already in use.
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input [(ngModel)]="registermodelobject.Password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            <div *ngIf="v_password" class="item-invalid">
+              Password should be atleast 8 characters.
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="contactno">Contact no</label>
+              <input [(ngModel)]="registermodelobject.ContactNo" type="number" class="form-control" id="contactno" placeholder="Phone number">
+              <div *ngIf="v_contact" class="item-invalid">
+                Valid phone number required.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="dob">Date of Birth</label>
+              <input [(ngModel)]="registermodelobject.DateOfBirth" type="date" class="form-control" id="dob" placeholder="birthdate">
+              <div *ngIf="v_dob" class="item-invalid">
+                Select Date of birth.
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="licence">Driving Licence</label>
+          <input [(ngModel)]="registermodelobject.DrivingLiscence" type="text" class="form-control" id="licence" placeholder="Driving Licence Number">
+          <div *ngIf="v_licence" class="item-invalid">
+            Driving Licence Number required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address</label>
+          <input [(ngModel)]="address" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <div *ngIf="v_address" class="item-invalid">
+            Enter Address Line.
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-5">
+            <label for="inputCity">City</label>
+            <input [(ngModel)]="city" type="text" class="form-control" id="inputCity" placeholder="City">
+            <div *ngIf="v_city" class="item-invalid">
+              Enter City
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select [(ngModel)]="state" id="inputState" class="form-control">
+              <!-- <option></option> -->
+              <option>Maharashtra</option>
+              <option>Tamil Nadu</option>
+              <option>Uttar Pradesh</option>
+              <option>West Bengal</option>
+              <option>Others</option>
+            </select>
+            <div *ngIf="v_state" class="item-invalid">
+              Select State
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputZip">Zip</label>
+            <input [(ngModel)]="zip" type="text" class="form-control" id="inputZip" placeholder="0000">
+            <div *ngIf="v_zip" class="item-invalid">
+              Enter Valid Zipcode.
+            </div>
+          </div>
+        </div>
+        <button [disabled]="disabled" (click)="OnRegister()" class="btn btn-primary">Confirm</button>
+    </div>
+</div>

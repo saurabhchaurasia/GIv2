@@ -1,0 +1,47 @@
+<main role="main" class="container jumbotron">
+<div class="container">
+    <h1 class="text-center">Renew Your Insurance</h1>
+    <h2>Choose your Plan</h2>
+    <form #planForm='ngForm' (ngSubmit)='SaveInsurance(INSURANCE)'>
+        <div class="form-check">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Plans'  type="radio" name="exampleRadios" id="exampleRadios1" value="ThirdPartyLiability" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Third Party Liability
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Plans'  type="radio" name="exampleRadios" id="exampleRadios1" value="Comprehensive" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Comprehensive
+            </label>
+          </div>
+          <h6>You have chosen:{{INSURANCE.Plans}}</h6>
+          <div>
+              <h2>Choose Duration</h2>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios1" id="exampleRadios1" value="1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              One Year
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios1" id="exampleRadios1" value="2" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Two Year
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios1" id="exampleRadios1" value="3" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Three year
+            </label>
+          </div>
+          <div>
+            <button type='submit' class="btn btn-success">Make Payment</button>
+        </div>
+
+          
+    </form>
+</div>
+</main>

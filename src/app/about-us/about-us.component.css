@@ -1,0 +1,14 @@
+.col-md-7{
+    background-color: #eeeeee;
+}
+
+h3{
+    background-color:rgb(17, 14, 173);
+    color: whitesmoke;
+    display: inline-block;
+    white-space: normal;
+    font-size: 1.4em;
+    line-height: 2em;
+    padding: 0 40px;
+    margin: -20px 0 12px -25px;
+}
