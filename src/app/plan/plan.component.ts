@@ -20,9 +20,16 @@ INSURANCE:Plansdts={
   Amount:null,
   PolicyStartDate:null,
 PolicyEndDate:null,
-// UserId:null,
+//UserId:null,
   MotorId:null
 };
+Premium:any;
+//Premium1:any;
+cc:any;
+vehicle:any;
+Yr:any;
+year:number;
+age:any;
 moto:any;
 id:number;
 PolicyEndDate1:string;
@@ -38,18 +45,209 @@ PolicyEndDate3:string;
     });
   }
   saveInsurance(INSURANCE:Plansdts):void{
+    this.cc=localStorage.getItem("cc");
+    console.log(this.cc);
+     localStorage.removeItem("cc");
+     this.vehicle=localStorage.getItem("VehicleType");
+     console.log(this.vehicle);
+     localStorage.removeItem("VehicleType");
+     this.Yr=localStorage.getItem("Year");
+     console.log(this.Yr);
+     this.age=this.year-this.Yr;
+     console.log(this.age);
+     localStorage.removeItem("Year");
+     
     this.INSURANCE=INSURANCE;
     if(this.INSURANCE.Duration=='1'){
-      this.INSURANCE.Amount=1000;
+      if(this.vehicle=='4Wheeler' && this.INSURANCE.Plans=='Comprehensive')
+      {
+        if(this.cc<="1000")
+        {
+          this.Premium=7500;
+        }
+        else if(this.cc<="2000" && this.cc>"1000"){
+          this.Premium=10000;
+        }
+        else 
+        this.Premium=15000;
+      }
+      else if(this.vehicle=='4Wheeler' && this.INSURANCE.Plans=='ThirdPartyLiability')
+      {
+        if(this.cc<="1000")
+        {
+          this.Premium=6000;
+        }
+        else if(this.cc<="2000" && this.cc>"1000"){
+          this.Premium=8000;
+        }
+        else 
+        this.Premium=12000;
+
+      }
+      else if(this.vehicle=='2Wheeler' && this.INSURANCE.Plans=='Comprehensive')
+      {
+        if(this.cc<="100")
+        {
+          this.Premium=1200;
+        }
+        else if(this.cc<="200" && this.cc>"100"){
+          this.Premium=1800;
+        }
+        else if(this.cc<"500" && this.cc>"200"){
+          this.Premium=2500;
+        }
+        else 
+        this.Premium=5000;
+
+      }
+      else
+      {
+        if(this.cc<="100")
+        {
+          this.Premium=1000;
+        }
+        else if(this.cc<="200" && this.cc>"100"){
+          this.Premium=1500;
+        }
+        else if(this.cc<"500" && this.cc>"200"){
+          this.Premium=2300;
+        }
+        else 
+        this.Premium=4000;
+
+      }
+      
+     
+      this.INSURANCE.Amount=this.Premium;
+      //this.INSURANCE.Amount=1000;
       this.INSURANCE.PolicyEndDate=this.PolicyEndDate1;
     }
     else if (this.INSURANCE.Duration=='2') {
-      this.INSURANCE.Amount=2000;
+      if(this.vehicle=='4Wheeler' && this.INSURANCE.Plans=='Comprehensive')
+      {
+        if(this.cc<="1000")
+        {
+          this.Premium=7500;
+        }
+        else if(this.cc<="2000" && this.cc>"1000"){
+          this.Premium=10000;
+        }
+        else 
+        this.Premium=15000;
+      }
+      else if(this.vehicle=='4Wheeler' && this.INSURANCE.Plans=='ThirdPartyLiability')
+      {
+        if(this.cc<="1000")
+        {
+          this.Premium=6000;
+        }
+        else if(this.cc<="2000" && this.cc>"1000"){
+          this.Premium=8000;
+        }
+        else 
+        this.Premium=12000;
+
+      }
+      else if(this.vehicle=='2Wheeler' && this.INSURANCE.Plans=='Comprehensive')
+      {
+        if(this.cc<="100")
+        {
+          this.Premium=1200;
+        }
+        else if(this.cc<="200" && this.cc>"100"){
+          this.Premium=1800;
+        }
+        else if(this.cc<"500" && this.cc>"200"){
+          this.Premium=2500;
+        }
+        else 
+        this.Premium=5000;
+
+      }
+      else
+      {
+        if(this.cc<="100")
+        {
+          this.Premium=1000;
+        }
+        else if(this.cc<="200" && this.cc>"100"){
+          this.Premium=1500;
+        }
+        else if(this.cc<"500" && this.cc>"200"){
+          this.Premium=2300;
+        }
+        else 
+        this.Premium=4000;
+      }
+      
+
+      this.INSURANCE.Amount=this.Premium*2;
+      
+      //this.INSURANCE.Amount=2000;
       this.INSURANCE.PolicyEndDate=this.PolicyEndDate2;
     } else {
-      this.INSURANCE.Amount=3000;
+      if(this.vehicle=='4Wheeler' && this.INSURANCE.Plans=='Comprehensive')
+      {
+        if(this.cc<="1000")
+        {
+          this.Premium=7500;
+        }
+        else if(this.cc<="2000" && this.cc>"1000"){
+          this.Premium=10000;
+        }
+        else 
+        this.Premium=15000;
+        
+      }
+      else if(this.vehicle=='4Wheeler' && this.INSURANCE.Plans=='ThirdPartyLiability')
+      {
+        if(this.cc<="1000")
+        {
+          this.Premium=6000;
+        }
+        else if(this.cc<="2000" && this.cc>"1000"){
+          this.Premium=8000;
+        }
+        else 
+        this.Premium=12000;
+
+      }
+      else if(this.vehicle=='2Wheeler' && this.INSURANCE.Plans=='Comprehensive')
+      {
+        if(this.cc<="100")
+        {
+          this.Premium=1200;
+        }
+        else if(this.cc<="200" && this.cc>"100"){
+          this.Premium=1800;
+        }
+        else if(this.cc<"500" && this.cc>"200"){
+          this.Premium=2500;
+        }
+        else 
+        this.Premium=5000;
+      }
+      else
+      {
+        if(this.cc<="100")
+        {
+          this.Premium=1000;
+        }
+        else if(this.cc<="200" && this.cc>"100"){
+          this.Premium=1500;
+        }
+        else if(this.cc<"500" && this.cc>"200"){
+          this.Premium=2300;
+        }
+        else 
+        this.Premium=4000;
+      }
+      
+      this.INSURANCE.Amount=this.Premium*3;
+      //this.INSURANCE.Amount=3000;
       this.INSURANCE.PolicyEndDate=this.PolicyEndDate3;
     }
+    
     INSURANCE.MotorId=this.moto.MotorId;
     this.AddInsurance();
   }
@@ -58,9 +256,10 @@ PolicyEndDate3:string;
 
     if(localStorage.getItem("loggedIn")=="true"){
       if(localStorage.getItem('role')=='User'){
-
         var date = new Date();
+        
         var year=date.getFullYear();
+        this.year=year;
         var month=date.getMonth();
         var day=date.getDay();
         var c = new Date(year + 1, month, day);

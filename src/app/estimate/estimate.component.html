@@ -1,34 +1,77 @@
-<div class="estimate-container">
-    <h2 class="btn-default">Premium Calculator</h2>
-    <div class="form-group">
-        <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Your premium amount is {{premium}}</strong>
-            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div>
-            <label>Enter Type of Vehicle</label>
-            <input type="text" class="form-control" name="vehtype" placeholder="Enter(1 or 2) : 1 for Two Wheeler and 2 for Four Wheeler" [(ngModel)]="vehtype"/>
-        </div>
-        <br>
-        <div>
-            <label>Enter Plan Type</label>
-            <input type="text" class="form-control" name="plan" placeholder="Enter(1 or 2) : 1 for Third Party and 2 for Comprehensive" [(ngModel)]="plan"/>
-        </div>
-        <br>
-        <div>
-            <label for='age'>Enter Age of Vehicle</label>
-            <input type="text" class="form-control" name="age" placeholder="Enter Age" [(ngModel)]="age"/>
-        </div>
-        <br>
-        <div>
-            <label for='price'>Enter Price of Vehicle</label>
-            <input type="text" class="form-control" name="price" placeholder="Enter Price" [(ngModel)]="price"/>
-        </div>
-        <br>
-        <div >
-            <button type="submit" class="btn btn-success" (click)="CalcPremium()">Estimate</button>
-        </div>
+    <div class="container">
+        <h2 style="text-align: center;">PREMIUM CALCULATOR</h2><br>
+        <form #estimateform (ngSubmit)='CalcPremium()'>
+            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Your premium amount is {{Amount |number : '1.0-0'}}</strong>
+                <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <h4>Choose type of vehicle</h4>
+            <div class="form-check">
+                <input class="form-check-input" [(ngModel)]='vehicle' type="radio" name="exampleRadios1" id="exampleRadios1" value="4Wheeler" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  4Wheeler
+                </label>
+                <br/>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]='vehicle' type="radio" name="exampleRadios2" id="exampleRadios2" value="2Wheeler">
+                <label class="form-check-label" for="exampleRadios2">
+                  2Wheeler
+                </label>
+              </div><br>
+              <h4>Plans</h4>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]='Plans' type="radio" name="exampleRadios3" id="exampleRadios3" value="ThirdPartyLiability" >
+                <label class="form-check-label" for="exampleRadios3">
+                  Third Party Liability
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]='Plans' type="radio" name="exampleRadios4" id="exampleRadios4" value="Comprehensive" >
+                <label class="form-check-label" for="exampleRadios4">
+                  Comprehensive
+                </label>
+              </div>        
+
+            <div><br>
+                <h4>Choose Duration</h4>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]='Duration' type="radio" name="exampleRadios5" id="exampleRadios5" value="1" >
+              <label class="form-check-label" for="exampleRadios5">
+                One Year
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]='Duration' type="radio" name="exampleRadios6" id="exampleRadios6" value="2">
+              <label class="form-check-label" for="exampleRadios6">
+                Two Year
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]='Duration' type="radio" name="exampleRadios7" id="exampleRadios7" value="3">
+              <label class="form-check-label" for="exampleRadios7">
+                Three year
+              </label>
+            </div><br>
+            <div class="form-group" [class.has-error]="Amtcontrol.touched && Amtcontrol.invalid">
+                <label for="Amount"><h4>Enter CC of vehicle</h4></label>
+                <input type="text" name="Amount" id="Amount" class="form-control" required [(ngModel)]='cc'
+                #Amtcontrol='ngModel' style="padding: 10px;">
+                <div *ngIf="Amtcontrol.touched && Amtcontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="Amtcontrol.errors.required">
+                        CC of vehicle is required
+                    </span>
+                </div>
+            </div><br>
+            <div>
+                <button type='submit'  class="btn btn-success">SUBMIT</button>
+            </div><br><br>
+            
+            
+
+        </form>
     </div>
-</div>
+

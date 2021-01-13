@@ -1,13 +1,13 @@
-<main role="main" class="container jumbotron">
+<main role="main" class="container ">
     <div class="container">
-        <h4 class="text-center">YOUR INSURANCE POLICIES</h4>
+        <h2 class="text-center">YOUR INSURANCE POLICIES</h2><br>
         <table class="table table-sm table-hover">
-            <tr class='btn-success'>
+            <tr class="table-secondary">
                 <th>Policy NO</th>
                 <th>Insurance Type</th>
                 <th>MotorId</th>
                 <th></th>
-            </tr>
+            </tr><br>
             <tr *ngFor="let InsuranceData of InsuranceDataList">
                 <td>{{InsuranceData.InsuranceId}}</td>
                 <td>{{InsuranceData.Plans}}</td>

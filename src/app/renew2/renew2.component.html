@@ -1,43 +1,43 @@
-<main role="main" class="container jumbotron">
+<main role="main" class="container ">
 <div class="container">
-    <h1 class="text-center">Renew Your Insurance</h1>
-    <h2>Choose your Plan</h2>
+    <h2 class="text-center">RENEW YOUR INSURANCE</h2><br>
+    <h4>Choose your Plan</h4>
     <form #planForm='ngForm' (ngSubmit)='SaveInsurance(INSURANCE)'>
         <div class="form-check">
-            <input class="form-check-input" [(ngModel)]='INSURANCE.Plans'  type="radio" name="exampleRadios" id="exampleRadios1" value="ThirdPartyLiability" checked>
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Plans'  type="radio" name="exampleRadios1" id="exampleRadios1" value="ThirdPartyLiability" checked>
             <label class="form-check-label" for="exampleRadios1">
               Third Party Liability
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" [(ngModel)]='INSURANCE.Plans'  type="radio" name="exampleRadios" id="exampleRadios1" value="Comprehensive" checked>
-            <label class="form-check-label" for="exampleRadios1">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Plans'  type="radio" name="exampleRadios2" id="exampleRadios2" value="Comprehensive" checked>
+            <label class="form-check-label" for="exampleRadios2">
               Comprehensive
             </label>
           </div>
-          <h6>You have chosen:{{INSURANCE.Plans}}</h6>
+          <br>
           <div>
-              <h2>Choose Duration</h2>
+              <h4>Choose Duration</h4>
           </div>
           <div class="form-check">
-            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios1" id="exampleRadios1" value="1" checked>
-            <label class="form-check-label" for="exampleRadios1">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios3" id="exampleRadios3" value="1" checked>
+            <label class="form-check-label" for="exampleRadios3">
               One Year
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios1" id="exampleRadios1" value="2" checked>
-            <label class="form-check-label" for="exampleRadios1">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios4" id="exampleRadios4" value="2" checked>
+            <label class="form-check-label" for="exampleRadios4">
               Two Year
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios1" id="exampleRadios1" value="3" checked>
-            <label class="form-check-label" for="exampleRadios1">
+            <input class="form-check-input" [(ngModel)]='INSURANCE.Duration'  type="radio" name="exampleRadios5" id="exampleRadios5" value="3" checked>
+            <label class="form-check-label" for="exampleRadios5">
               Three year
             </label>
           </div>
-          <div>
+          <div><br>
             <button type='submit' class="btn btn-success">Make Payment</button>
         </div>
 

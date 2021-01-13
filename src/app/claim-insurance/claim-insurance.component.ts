@@ -35,7 +35,7 @@ export class ClaimInsuranceComponent implements OnInit {
     this.claimservice.addClaimDetails(this.claim).subscribe(
       ()=>{
         console.log(this.claim)
-        alert("submitted succesfully");
+        //alert("submitted succesfully");
         this.router.navigate(['/history']);
       }
     );

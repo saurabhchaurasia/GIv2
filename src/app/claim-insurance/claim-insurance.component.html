@@ -1,5 +1,5 @@
 <div class='container'   >
-      <h3 class="form-heading" class="text-center">Claim Insurance</h3>
+      <h3 class="form-heading" class="text-center">CLAIM INSURANCE</h3>
            <form #claimForm='ngForm' (ngSubmit)='saveClaim(claim)'>
                <div class='form-group' [class.has-error]='numcontrol.touched && numcontrol.invalid'>
                 <div class="form-group">
@@ -7,7 +7,7 @@
                       <select id="num" name="num"  required ngModel class="form-control" [(ngModel)]='claim.InsuranceId'
                         #numcontrol='ngModel'>
                         <option [ngValue]="null">Select Insurance</option>
-                        <option *ngFor="let i of insurancelist" value={{i.InsuranceId}} >{{i.InsuranceId}}-{{i.Plans}}-{{i.MotorId}}</option>
+                        <option *ngFor="let i of insurancelist" value={{i.InsuranceId}} >{{i.InsuranceId}}-{{i.Plans}}</option>
                       </select>
                        <span class='help-block alert-danger' *ngIf='numcontrol.touched && numcontrol.invalid'>
                            Insurance Number cannot be blank

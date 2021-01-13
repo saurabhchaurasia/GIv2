@@ -1,11 +1,17 @@
 .resetForm{
     margin-left:25%;
-    padding: 5%;
+    padding: 4%;
     width:50%;
+    background-color: #eeeeee;
+    border-radius: 15px;
+
 }
 .resetForm img{
-    margin-left: 30%;
+    margin-left: 36%;
     margin-bottom: 3%;
+    width: 40%;
+    
+
 }
 
 /* ============================================================ */

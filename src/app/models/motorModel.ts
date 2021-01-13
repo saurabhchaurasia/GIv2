@@ -1,5 +1,5 @@
 export interface Buydts{
-    ManufactureYear:number;
+    ManufactureYear:string;
     Model:string;
     Type:string;
     PurchaseDate:string;
@@ -7,4 +7,5 @@ export interface Buydts{
     EngineNo:number;
     ChasisNo:number;
     // UserId:number;
+    CC:string;
 }

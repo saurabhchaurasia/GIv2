@@ -13,12 +13,13 @@ export class BuyComponent implements OnInit {
 MOTOR:Buydts={
   ManufactureYear:null,
   Model:null,
-  Type:null,
+  Type:"4Wheeler",
   PurchaseDate:null,
   Regno:null,
   EngineNo:null,
   ChasisNo:null,
   // UserId:null
+  CC:null
 };
   constructor(private buyservices:BuyServicesService,private router:Router) { }
     AddMotor(){
@@ -30,6 +31,9 @@ MOTOR:Buydts={
     saveMotor(MOTOR:Buydts):void{
       this.MOTOR=MOTOR;
       // this.MOTOR.UserId=6;
+      localStorage.setItem("cc",this.MOTOR.CC);
+      localStorage.setItem("VehicleType",this.MOTOR.Type);
+      localStorage.setItem("Year",this.MOTOR.ManufactureYear);
       this.AddMotor();
     }
 

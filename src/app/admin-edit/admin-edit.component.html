@@ -1,4 +1,5 @@
 <div class='container'>
+    <h2 style="text-align: center;">APPROVE CLAIM</h2><br>
     <form  (ngSubmit)='saveData(adm)'>
         <div class="form-group" >
             <p>Claim ID: </p>
@@ -8,6 +9,22 @@
            <p >Claim Date: </p>
            <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" readonly [(ngModel)]="adm.ClaimDate"/>
        </div>
+       <div class="form-group"  > 
+        <p >Plans: </p>
+        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" readonly [(ngModel)]="adm.Plans"/>
+    </div>
+    <div class="form-group"  > 
+        <p >Type: </p>
+        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" readonly [(ngModel)]="adm.Type"/>
+    </div>
+    <div class="form-group"  > 
+        <p >Model: </p>
+        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" readonly [(ngModel)]="adm.Model"/>
+    </div>
+    <div class="form-group"  > 
+        <p >Manufacture Year: </p>
+        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" readonly [(ngModel)]="adm.ManufactureYear"/>
+    </div>
        <div class="form-group">
            <p >Reason: </p>
            <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" readonly [(ngModel)]="adm.ReasonToClaim"/>

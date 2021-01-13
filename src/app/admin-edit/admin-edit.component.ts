@@ -10,7 +10,7 @@ import {IAdmin} from './../models/IAdmin';
 })
 export class AdminEditComponent implements OnInit {
 
-  adm:IAdmin;
+  adm:IAdmin={ClaimId:null,ClaimAmount:null,ClaimDate:null,ReasonToClaim:null,ApprovalStatus:null,ManufactureYear:null,Model:null,Plans:null,Type:null};
   constructor(private adminservice:AdminService,private router:Router,private route:ActivatedRoute) { }
 
   getClaimInfo(id:number){
@@ -21,7 +21,7 @@ export class AdminEditComponent implements OnInit {
   editClaim(){
     this.adminservice.editClaim(this.adm).subscribe( 
       ()=>{
-        alert ("Record Edited");
+        //alert ("Record Edited");
         this.router.navigate(['/admin'])
       });
   }

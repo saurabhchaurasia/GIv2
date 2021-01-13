@@ -2,6 +2,9 @@
     width:50%;
     margin-left:25%;
     padding:5%;
+    background-color: #eeeeee;
+    border-radius: 15px;
+    
 }
 
 .item-invalid{
@@ -9,4 +12,7 @@
     font-weight: 500;
     font-size: small;
     margin-left: 1%;
+}
+h2{
+    text-align: center;
 }

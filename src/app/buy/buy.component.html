@@ -1,9 +1,11 @@
-<main role="main" class="container jumbotron">
+<main role="main" class="container ">
     <div class="container">
-        <h1 class="text-center" >Buy Insurance</h1>
+        <h1 class="text-center" >BUY INSURANCE</h1><br>
         <form #buyForm='ngForm' (ngSubmit)='saveMotor(MOTOR)'>
+            <h6>Choose type of vehicle</h6>
             <div class="form-check">
-                <input class="form-check-input" [(ngModel)]='MOTOR.Type' type="radio" name="exampleRadios" id="exampleRadios1" value="4Wheller" checked>
+                
+                <input class="form-check-input" [(ngModel)]='MOTOR.Type' type="radio" name="exampleRadios" id="exampleRadios1" value="4Wheeler" checked>
                 <label class="form-check-label" for="exampleRadios1">
                   4Wheeler
                 </label>
@@ -15,7 +17,7 @@
                   2Wheeler
                 </label>
               </div>
-             <h6> Your Choice of Vehicle:{{MOTOR.Type}}</h6>
+             <br>
               <div class="form-group" [class.has-error]="yearcontrol.touched && yearcontrol.invalid">
                 <label for="year">Enter ManufactureYear</label>
                 <input type="text" name="year" id="year" class="form-control" required [(ngModel)]='MOTOR.ManufactureYear' #yearcontrol='ngModel'>
@@ -68,6 +70,16 @@
                 <div *ngIf="Chasiscontrol.touched && Chasiscontrol.invalid">
                     <span class="help-block- alert-danger" *ngIf="Chasiscontrol.errors.required">
                         ChasisNo is required
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="Amtcontrol.touched && Amtcontrol.invalid">
+                <label for="Amount">Enter CC of vehicle</label>
+                <input type="text" name="Amount" id="Amount" class="form-control" required [(ngModel)]='MOTOR.CC'
+                #Amtcontrol='ngModel'>
+                <div *ngIf="Amtcontrol.touched && Amtcontrol.invalid">
+                    <span class="help-block- alert-danger" *ngIf="Amtcontrol.errors.required">
+                        CC of vehicle is required
                     </span>
                 </div>
             </div>

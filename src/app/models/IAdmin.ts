@@ -4,6 +4,8 @@ export interface IAdmin{
     ApprovalStatus:string;
     ClaimAmount:string;
     ReasonToClaim:string;
-    InsuranceId:number;
-    UserId:number;
+    ManufactureYear:number;
+    Model:string;
+    Type :string;
+    Plans:string;
 }
