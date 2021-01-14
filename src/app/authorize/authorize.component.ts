@@ -13,10 +13,12 @@ export class AuthorizeComponent implements OnInit {
   Password:string="";
   loggedIn:boolean = false;
   rememberme:boolean = true;
+  desired:string="User";
 
   constructor(private authService:AuthenticateService, private router:Router) { }
 
   LoginClick():void{
+    localStorage.setItem("desired",this.desired);
     this.authService.Login(this.Email, this.Password).subscribe((data: any)=>{
       if(data=="LOGGED_IN"){
         this.loggedIn = true;
@@ -40,6 +42,9 @@ export class AuthorizeComponent implements OnInit {
 
   ForgotClick(){
     this.router.navigate(['/resetPassword'])
+  }
+  do(){
+    console.log(this.desired);
   }
 
   ngOnInit(): void {

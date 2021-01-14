@@ -44,6 +44,10 @@ export class NavbarComponent implements OnInit {
         localStorage.setItem("role",this.role);
         localStorage.setItem("loggedIn", "true");
         this.loggedIn = true;
+        let desired=localStorage.getItem("desired");
+        if(desired!=data.Role){
+          alert("You do not have "+desired+" Privileges");
+        }
       })
     }else{
       this.loggedIn = false;

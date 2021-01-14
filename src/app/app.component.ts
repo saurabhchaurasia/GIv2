@@ -9,6 +9,6 @@ import { AuthenticateService } from './services/authenticate.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'GI';
+  title = 'Ideal Options';
   
 }

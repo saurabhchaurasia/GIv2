@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
 
           if(data=="LOGGED_IN"){
             //delay here
+            localStorage.setItem("desired","User");
             window.location.replace("http://localhost:4200/")
           }
         })
