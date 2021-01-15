@@ -21,13 +21,19 @@ export class ApiService {
   
   constructor(private http: HttpClient, private authService : AuthenticateService) { }
 
+  //No it is not.
+
   Register(user:Register):Observable<any>{
     return this.http.post<Register>(this.baseUrl + "/user/RegisterUser", user, this.defaultHttpOptions);
   }
 
+  //This is clearly unacceptable
+
   GetEmailIdRegister(user:Register):Observable<any>{
     return this.http.post<string>(this.baseUrl + "/user/PostUserEmail", user, this.defaultHttpOptions);
   }
+
+  //Yes I also think you wont need this.
 
   GetEmailIdReset(user:Reset):Observable<any>{
     return this.http.post<string>(this.baseUrl + "/user/PostUserEmail", user, this.defaultHttpOptions);
