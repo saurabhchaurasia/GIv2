@@ -21,11 +21,15 @@ export class ApiService {
   
   constructor(private http: HttpClient, private authService : AuthenticateService) { }
 
+  //I think this the last one.
+
   //No it is not.
 
   Register(user:Register):Observable<any>{
     return this.http.post<Register>(this.baseUrl + "/user/RegisterUser", user, this.defaultHttpOptions);
   }
+
+  //But i dont feel like it is
 
   //This is clearly unacceptable
   // i dont think you need them
