@@ -15,13 +15,15 @@ export class ApiService {
     headers: new HttpHeaders({ 'Content-Type':'application/json' })
   };
 
-  //this is one extra line I added here.
+  //what are these comments you added here
 
   constructor(private http: HttpClient, private authService : AuthenticateService) { }
 
   Register(user:Register):Observable<any>{
     return this.http.post<Register>(this.baseUrl + "/user/RegisterUser", user, this.defaultHttpOptions);
   }
+
+  // i dont think you need them
 
   GetEmailIdRegister(user:Register):Observable<any>{
     return this.http.post<string>(this.baseUrl + "/user/PostUserEmail", user, this.defaultHttpOptions);
