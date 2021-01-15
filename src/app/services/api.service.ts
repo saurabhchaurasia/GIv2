@@ -15,7 +15,7 @@ export class ApiService {
     headers: new HttpHeaders({ 'Content-Type':'application/json' })
   };
 
-  //this is one extra line I added here.
+  //what are these comments you added here
 
   //second line added to master branch.
   
@@ -28,6 +28,8 @@ export class ApiService {
   }
 
   //This is clearly unacceptable
+  // i dont think you need them
+
 
   GetEmailIdRegister(user:Register):Observable<any>{
     return this.http.post<string>(this.baseUrl + "/user/PostUserEmail", user, this.defaultHttpOptions);
